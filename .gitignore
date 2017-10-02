@@ -1,0 +1,9 @@
+nbproject
+*~
+._*
+.~lock.*
+.DS_Store
+.idea
+.project
+.php_cs.cache
+vendor
