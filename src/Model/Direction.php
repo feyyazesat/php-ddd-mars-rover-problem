@@ -7,6 +7,7 @@ use InvalidArgumentException;
 
 class Direction
 {
+
     public const X_AXIS = 'X';
     public const Y_AXIS = 'Y';
 
@@ -46,6 +47,9 @@ class Direction
         self::SOUTH => -1,
     ];
 
+    /**
+     * @var string $direction
+     */
     private $direction = '';
 
     /**
@@ -71,9 +75,9 @@ class Direction
      * @param Spin $spin
      * @return Direction
      */
-    public function change(Spin $spin) : self
+    public function change(Spin $spin): self
     {
-        if (Spin::LEFT === (string) $spin) {
+        if (Spin::LEFT === (string)$spin) {
             return new self(self::RIGHT_TO_LEFT_DIRECTIONS[$this->direction]);
         }
 
@@ -83,7 +87,7 @@ class Direction
     /**
      * @return string
      */
-    public function axis() : string
+    public function axis(): string
     {
         return self::AXIS_MAP[$this->direction];
     }
@@ -91,7 +95,7 @@ class Direction
     /**
      * @return int
      */
-    public function axisValue() : int
+    public function axisValue(): int
     {
         return self::AXIS_VALUE_MAP[$this->direction];
     }
@@ -99,8 +103,8 @@ class Direction
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return (string) $this->direction;
+        return (string)$this->direction;
     }
 }

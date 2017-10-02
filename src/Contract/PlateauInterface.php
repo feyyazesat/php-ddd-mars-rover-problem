@@ -5,8 +5,9 @@ namespace App\Contract;
 
 interface PlateauInterface extends PositionableInterface
 {
+
     /**
      * @return string
      */
-    public function __toString() : string;
+    public function __toString(): string;
 }

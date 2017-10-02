@@ -10,6 +10,10 @@ use App\Contract\RoverInterface;
 
 class Action
 {
+
+    /**
+     * @var RoverInterface|null $rover
+     */
     private $rover = null;
 
     /**
@@ -25,7 +29,7 @@ class Action
      * @param array $movement
      * @return string
      */
-    public function act(array $movement) : string
+    public function act(array $movement): string
     {
         foreach ($movement as $operation) {
             try {
@@ -39,6 +43,6 @@ class Action
             }
         }
 
-        return (string) $this->rover;
+        return (string)$this->rover;
     }
 }

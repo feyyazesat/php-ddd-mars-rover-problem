@@ -1,5 +1,4 @@
 <?php
-
 namespace spec\App\Model;
 
 use App\Model\Coordinate;
@@ -8,23 +7,24 @@ use PhpSpec\ObjectBehavior;
 
 class PositionSpec extends ObjectBehavior
 {
-    function let(Coordinate $coordinate)
+
+    public function let(Coordinate $coordinate)
     {
         $this->beConstructedWith($coordinate, $coordinate);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Position::class);
     }
 
-    function it_can_return_its_string_value()
+    public function it_can_return_its_string_value()
     {
         $this->beConstructedWith(new Coordinate(1), new Coordinate(2));
         $this->__toString()->shouldReturn("1 2");
     }
 
-    function it_can_change_its_coordinates()
+    public function it_can_change_its_coordinates()
     {
         $this->beConstructedWith(new Coordinate(1), new Coordinate(2));
         $case = $this->change($this->valueX()->increaseCoordinateBy(1), new Coordinate(2));

@@ -7,10 +7,14 @@ use InvalidArgumentException;
 
 class Spin
 {
+
     const LEFT  = 'L';
     const RIGHT = 'R';
     const AVAILABLE_SPINS = [self::LEFT, self::RIGHT];
 
+    /**
+     * @var string $spin
+     */
     private $spin = '';
 
     /**
@@ -31,7 +35,7 @@ class Spin
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
         return $this->spin;
     }

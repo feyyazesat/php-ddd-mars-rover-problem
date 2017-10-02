@@ -5,7 +5,15 @@ namespace App\Model;
 
 class Position
 {
+
+    /**
+     * @var Coordinate|null $xCoordinate
+     */
     private $xCoordinate = null;
+
+    /**
+     * @var Coordinate|null $yCoordinate
+     */
     private $yCoordinate = null;
 
     /**
@@ -24,7 +32,7 @@ class Position
      * @param Coordinate $yCoordinate
      * @return self
      */
-    public function change(Coordinate $xCoordinate, Coordinate $yCoordinate) : self
+    public function change(Coordinate $xCoordinate, Coordinate $yCoordinate): self
     {
         return new self($xCoordinate, $yCoordinate);
     }
@@ -32,7 +40,7 @@ class Position
     /**
      * @return Coordinate
      */
-    public function valueX() : Coordinate
+    public function valueX(): Coordinate
     {
         return $this->xCoordinate;
     }
@@ -40,7 +48,7 @@ class Position
     /**
      * @return Coordinate
      */
-    public function valueY() : Coordinate
+    public function valueY(): Coordinate
     {
         return $this->yCoordinate;
     }
@@ -48,8 +56,8 @@ class Position
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return $this->xCoordinate . ' ' . $this->yCoordinate;
+        return ($this->xCoordinate . ' ' . $this->yCoordinate);
     }
 }

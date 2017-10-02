@@ -12,8 +12,16 @@ use App\Model\Position;
 
 class Rover implements RoverInterface
 {
-    private $direction = null;
+
+    /**
+     * @var Position|null $position
+     */    
     private $position  = null;
+
+    /**
+     * @var Direction|null $direction
+     */
+    private $direction = null;
 
     /**
      * Rover constructor.
@@ -29,7 +37,7 @@ class Rover implements RoverInterface
     /**
      * @inheritdoc
      */
-    public function spin(Spin $spin) : void
+    public function spin(Spin $spin): void
     {
         $this->direction = $this->direction->change($spin);
     }
@@ -37,7 +45,7 @@ class Rover implements RoverInterface
     /**
      * @inheritdoc
      */
-    public function move(Move $move) : void
+    public function move(Move $move): void
     {
         $value = $move->factor($this->direction->axisValue());
 
@@ -69,8 +77,8 @@ class Rover implements RoverInterface
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return (string) ($this->position . ' ' . $this->direction);
+        return (string)($this->position . ' ' . $this->direction);
     }
 }

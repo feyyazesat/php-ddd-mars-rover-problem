@@ -10,11 +10,12 @@ use InvalidArgumentException;
 
 class Input
 {
+
     /**
      * @param string $input
      * @return Position
      */
-    public static function plateauInputFromString(string $input) : Position
+    public static function plateauInputFromString(string $input): Position
     {
         $inputArray = self::toArray($input);
 
@@ -33,7 +34,7 @@ class Input
      * @param string $input
      * @return array
      */
-    public static function roverInputFromString(string $input) : array
+    public static function roverInputFromString(string $input): array
     {
         $inputArray = self::toArray($input);
 
@@ -55,7 +56,7 @@ class Input
      * @param string $commands
      * @return array
      */
-    public static function movementCommandsFromString(string $commands) : array
+    public static function movementCommandsFromString(string $commands): array
     {
         return array_filter(
             array_map(
@@ -71,7 +72,7 @@ class Input
      * @param array $inputArray
      * @return bool
      */
-    private static function IsDigit(array $inputArray) : bool
+    private static function IsDigit(array $inputArray): bool
     {
         return (ctype_digit($inputArray[0]) && ctype_digit($inputArray[1]));
     }
@@ -80,7 +81,7 @@ class Input
      * @param string $input
      * @return array
      */
-    private static function toArray(string $input) : array
+    private static function toArray(string $input): array
     {
        return explode(' ', trim($input));
     }

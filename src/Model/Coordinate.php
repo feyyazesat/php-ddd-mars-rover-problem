@@ -5,6 +5,10 @@ namespace App\Model;
 
 class Coordinate
 {
+
+    /**
+     * @var int $coordinate
+     */
     private $coordinate = 0;
 
     /**
@@ -21,7 +25,7 @@ class Coordinate
      * @param int $coordinate
      * @return Coordinate
      */
-    public function increaseCoordinateBy(int $coordinate) : self
+    public function increaseCoordinateBy(int $coordinate): self
     {
         return new self($this->coordinate + $coordinate);
     }
@@ -29,8 +33,8 @@ class Coordinate
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return (string) $this->coordinate;
+        return (string)$this->coordinate;
     }
 }

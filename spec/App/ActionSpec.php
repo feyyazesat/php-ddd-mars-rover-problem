@@ -1,5 +1,4 @@
 <?php
-
 namespace spec\App;
 
 use App\Action;
@@ -15,13 +14,14 @@ use PhpSpec\Exception\Example\SkippingException;
 
 class ActionSpec extends ObjectBehavior
 {
-    function it_is_initializable(Rover $rover)
+
+    public function it_is_initializable(Rover $rover)
     {
         $this->beConstructedWith($rover);
         $this->shouldHaveType(Action::class);
     }
 
-    function it_can_act(Rover $rover, Spin $spin, Move $move)
+    public function it_can_act(Rover $rover, Spin $spin, Move $move)
     {
         return new SkippingException('Incomplete Test Skipped...');
 

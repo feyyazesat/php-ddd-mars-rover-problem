@@ -1,5 +1,4 @@
 <?php
-
 namespace spec\App\Entity;
 
 use App\Model\Coordinate;
@@ -14,17 +13,18 @@ use PhpSpec\ObjectBehavior;
 
 class RoverSpec extends ObjectBehavior
 {
-    function let(Position $position, Direction $direction)
+
+    public function let(Position $position, Direction $direction)
     {
         $this->beConstructedWith($position, $direction);
     }
 
-    function it_is_initializable()
+    public function it_is_initializable()
     {
         $this->shouldHaveType(Rover::class);
     }
 
-    function it_can_spin(Direction $direction, Spin $spin)
+    public function it_can_spin(Direction $direction, Spin $spin)
     {
         $direction->change($spin)
             ->shouldBeCalled();
@@ -32,7 +32,7 @@ class RoverSpec extends ObjectBehavior
         $this->spin($spin);
     }
 
-    function it_can_move(Direction $direction, Position $position, Move $move)
+    public function it_can_move(Direction $direction, Position $position, Move $move)
     {
         $direction->beConstructedWith(['N']);
 
@@ -65,7 +65,7 @@ class RoverSpec extends ObjectBehavior
         $this->move($move);
     }
 
-    function it_will_be_on_0_1_S_when_1_2_N_provided_and_L_M_L_M_requested()
+    public function it_will_be_on_0_1_S_when_1_2_N_provided_and_L_M_L_M_requested()
     {
         /** @var RoverInterface $rover */
         $this->beConstructedWith(
@@ -81,7 +81,7 @@ class RoverSpec extends ObjectBehavior
         $this->__toString()->shouldReturn('0 1 S');
     }
 
-    function it_will_be_on_3_3_E_when_1_2_N_provided_and_L_M_L_M_L_M_L_M_M_requested()
+    public function it_will_be_on_3_3_E_when_1_2_N_provided_and_L_M_L_M_L_M_L_M_M_requested()
     {
         $this->beConstructedWith(
             new Position(new Coordinate(1), new Coordinate(2)),
@@ -101,7 +101,7 @@ class RoverSpec extends ObjectBehavior
         $this->__toString()->shouldReturn('1 3 N');
     }
 
-    function it_will_be_on_1_6_N_when_1_2_N_provided_and_M_M_M_M_requested()
+    public function it_will_be_on_1_6_N_when_1_2_N_provided_and_M_M_M_M_requested()
     {
         $this->beConstructedWith(
             new Position(new Coordinate(1), new Coordinate(2)),
@@ -116,7 +116,7 @@ class RoverSpec extends ObjectBehavior
         $this->__toString()->shouldReturn('1 6 N');
     }
 
-    function it_will_be_on_1_2_S_when_1_2_N_provided_and_L_L_L_R_requested()
+    public function it_will_be_on_1_2_S_when_1_2_N_provided_and_L_L_L_R_requested()
     {
         $this->beConstructedWith(
             new Position(new Coordinate(1), new Coordinate(2)),
@@ -131,7 +131,7 @@ class RoverSpec extends ObjectBehavior
         $this->__toString()->shouldReturn('1 2 S');
     }
 
-    function it_will_not_move_when_1_2_N_provided_and_L_L_L_L_R_R_R_R_requested()
+    public function it_will_not_move_when_1_2_N_provided_and_L_L_L_L_R_R_R_R_requested()
     {
         $this->beConstructedWith(
             new Position(new Coordinate(1), new Coordinate(2)),

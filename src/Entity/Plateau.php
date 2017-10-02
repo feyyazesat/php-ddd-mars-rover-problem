@@ -9,6 +9,10 @@ use App\Model\Position;
 
 class Plateau implements PlateauInterface
 {
+
+    /**
+     * @var Position|null $position
+     */
     private $position = null;
 
     /**
@@ -23,7 +27,7 @@ class Plateau implements PlateauInterface
     /**
      * @inheritdoc
      */
-    public function relativePosition(PositionableInterface $object) : PositionableInterface
+    public function relativePosition(PositionableInterface $object): PositionableInterface
     {
         // TODO: Implement relativePosition() method.
         return $object;
@@ -32,8 +36,8 @@ class Plateau implements PlateauInterface
     /**
      * @return string
      */
-    public function __toString() : string
+    public function __toString(): string
     {
-        return (string) $this->position;
+        return (string)$this->position;
     }
 }

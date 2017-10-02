@@ -5,6 +5,7 @@ namespace App\Model;
 
 class Move
 {
+
     public const COMMAND_MOVE = 'M';
 
     private const MOVEMENT_FACTOR = 1;
@@ -32,8 +33,8 @@ class Move
      * @param int $value
      * @return int
      */
-    public function factor(int $value) : int
+    public function factor(int $value): int
     {
-        return self::MOVEMENT_FACTOR * $value;
+        return (self::MOVEMENT_FACTOR * $value);
     }
 }
