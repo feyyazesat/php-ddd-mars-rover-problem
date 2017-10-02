@@ -2,4 +2,4 @@ suites:
   suite:
     namespace: App
     psr4_prefix:
-    src_patch: src
+    src_path: src
